@@ -1,6 +1,7 @@
 const RatingAndReview = require("../models/RatingAndRaview");
 const Course = require("../models/Course");
-const { mongo, default: mongoose } = require("mongoose");
+// const { mongo, default: mongoose } = require("mongoose");
+const mongoose = require("mongoose");
 
 //createRating
 exports.createRating = async (req, res) => {
@@ -33,7 +34,7 @@ exports.createRating = async (req, res) => {
                         message:'Course is already reviewed by the user',
                     });
                 }
-        //create rating and review
+        // create rating and review
         const ratingReview = await RatingAndReview.create({
                                         rating, review, 
                                         course:courseId,
